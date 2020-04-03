@@ -1,11 +1,10 @@
-window.addEventListener("load", initPage, false);
 
-
+window.addEventListener('DOMContentLoaded', initStatus, false);
 
 var changeStatusRequest = new XMLHttpRequest();
 var getStatusRequest = new XMLHttpRequest();
 
-function initPage(){
+function initStatus(){
     var submitStatus = document.querySelector("#submitStatus");
     submitStatus.addEventListener('click', changeStatus);
     getStatus();
@@ -13,6 +12,9 @@ function initPage(){
 
 function changeStatus () {
     var statusText = document.querySelector("#statusForm").value;
+    if(statusText.length == 0){
+        statusText = "online"
+    }
     var information = "status=" + encodeURIComponent(statusText);
     changeStatusRequest.open("POST", "Controller?action=SetStatus", true);
 
@@ -22,14 +24,14 @@ function changeStatus () {
 
 function getStatus(){
     getStatusRequest.open("GET", "Controller?action=GetStatus", true);
-    getStatusRequest.onreadystatechange = getData;
+    getStatusRequest.onreadystatechange = getStatusData;
     getStatusRequest.send(null);
 
 
 
 
 }
-function getData () {
+function getStatusData () {
     if (getStatusRequest.readyState == 4) {
         if (getStatusRequest.status == 200) {
             var serverResponse = JSON.parse(getStatusRequest.responseText);

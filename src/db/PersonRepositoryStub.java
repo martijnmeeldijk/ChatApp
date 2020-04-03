@@ -18,6 +18,13 @@ public class PersonRepositoryStub implements PersonRepository {
 		add(jan);
 		Person an = new Person("an@ucll.be", "t", "An", "Cornelissen", Role.LID);
 		add(an);
+		Person wim = new Person("wim@ucll.be", "t", "Wim", "Bertels", Role.LID);
+		add(wim);
+		Person daphne = new Person("daphne@gmail.com", "t", "Daphne", "Rose", Role.LID);
+		add(daphne);
+
+		makeFriends(jan, wim);
+		makeFriends(jan, an);
 	}
 	
 	public Person get(String personId){
@@ -47,7 +54,15 @@ public class PersonRepositoryStub implements PersonRepository {
 		}
 		persons.put(person.getUserId(), person);
 	}
-	
+
+	@Override
+	public void makeFriends(Person person, Person person1) {
+		person.addFriend(person1);
+		person1.addFriend(person);
+		update(person);
+		update(person1);
+	}
+
 	public void delete(String personId){
 		if(personId == null){
 			throw new IllegalArgumentException("No id given");

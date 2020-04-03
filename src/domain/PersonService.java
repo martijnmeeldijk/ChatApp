@@ -35,6 +35,10 @@ public class PersonService {
 		return getPersonRepository().getAuthenticatedUser(email, password);
 	}
 
+	public void makeFriends(Person person1, Person person2){
+		getPersonRepository().makeFriends(person1,person2);
+	}
+
 	private PersonRepository getPersonRepository() {
 		return personRepository;
 	}

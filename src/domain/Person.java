@@ -1,10 +1,13 @@
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,6 +21,8 @@ public class Person {
 	private String lastName;
 	private Role role;
 	private String status;
+	@JsonIgnore
+	private List<Person> friends;
 
 	public Person(String userId, String password, String firstName,
 			String lastName,Role role) {
@@ -26,6 +31,7 @@ public class Person {
 		setFirstName(firstName);
 		setLastName(lastName);
 		setRole(role);
+		this.friends = new ArrayList<>();
 		this.status = "online";
 	}
 
@@ -161,5 +167,12 @@ public class Person {
 			throw new IllegalArgumentException("No status given");
 		}
 		this.status = status;
+	}
+
+	public List<Person> getFriends() {
+		return friends;
+	}
+	public void addFriend(Person person){
+		this.friends.add(person);
 	}
 }

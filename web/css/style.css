@@ -32,13 +32,7 @@ main, footer {
     border: 2px white;
     max-width: 35px;
 }
-.login-dark {
-    background-image: url("../images/space.jpg");
-    background:#475d62;
-    background-size:cover;
 
-
-}
 
 .login-dark form {
     max-width:320px;
@@ -46,10 +40,7 @@ main, footer {
     background-color:#1e2833;
     padding:40px;
     border-radius:4px;
-    transform:translate(-50%, -50%);
-    position:absolute;
-    top:50%;
-    left:50%;
+
     color:#fff;
     box-shadow:3px 3px 4px rgba(0,0,0,0.2);
     margin: auto;
@@ -57,7 +48,6 @@ main, footer {
 
 .login-dark .illustration {
     text-align:center;
-    padding:15px 0 20px;
     font-size:100px;
     color:#2980ef;
 }
@@ -105,6 +95,38 @@ main, footer {
 .login-dark form .btn-primary:active {
     transform:translateY(1px);
 }
+.login-dark{
+
+}
 .active{
     color: white !important;
+}
+
+.chat-container{
+    display: grid;
+    grid-template-columns: 20vw auto 30vw;
+    grid-gap: 1em;
+
+}
+aside {
+    grid-column: 3;
+    padding-top: 2em;
+
+}
+article{
+    padding-top: 2em;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.friend-list{
+    width:100%;
+    background-color:#1e2833;
+    border-radius:4px;
+
+    color:#fff;
+    box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+
 }
