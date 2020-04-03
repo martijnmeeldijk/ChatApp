@@ -37,22 +37,19 @@ public class Controller extends HttpServlet {
 	protected void processRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        String destination = "index.jsp";
         if (action != null) {
         	RequestHandler handler;
         	try {
         		handler = controllerFactory.getController(action, model);
-				destination = handler.handleRequest(request, response);
+				handler.handleRequest(request, response);
         	} 
         	catch (NotAuthorizedException exc) {
         		List<String> errors = new ArrayList<String>();
         		errors.add(exc.getMessage());
         		request.setAttribute("errors", errors);
-        		destination="index.jsp";
+        		request.getRequestDispatcher("index.jsp").forward(request,response);
         	}
         }
-        RequestDispatcher view = request.getRequestDispatcher(destination);
-        view.forward(request, response);
 	}
 
 }

@@ -1,8 +1,10 @@
 package controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,8 +15,8 @@ import domain.PersonService;
 public class LogIn extends RequestHandler {
 
 	@Override
-	public String handleRequest(HttpServletRequest request,
-			HttpServletResponse response) {
+	public void handleRequest(HttpServletRequest request,
+							  HttpServletResponse response) throws ServletException, IOException {
 		String destination = "index.jsp";
 		List<String> errors = new ArrayList<String>();
 		
@@ -43,7 +45,7 @@ public class LogIn extends RequestHandler {
 			request.setAttribute("errors", errors);
 		}
 		
-		return destination;	
+		request.getRequestDispatcher(destination).forward(request,response);
 	}
 	
 	private void createSession(Person person, HttpServletRequest request,

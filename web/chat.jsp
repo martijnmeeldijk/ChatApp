@@ -17,19 +17,24 @@
 <body>
 <div class="login-dark">
 
-    <form method="post" action="Controller?action=LogOut">
-        <p>Welcome ${user.getFirstName()}!</p>
+    <form action="" method="post">
+        <p>Welcome ${user.getFirstName()}! Your status is:</p>
+
+        <p id="status"><sup>loading</sup></p>
 
         <div class="form-group">
-            <div class="form-group">
-                <label for="status">Status</label>
-                <input class="form-control" id="status" type="text" name="status"
-                       value="${user.getStatus()}" >
-            </div>
-            <button class="btn btn-primary btn-block" type="submit" id="submit">Change Status</button>
+
+            <label for="statusForm">Status</label>
+            <input class="form-control" id="statusForm" type="text"
+                   value="" placeholder="Change Status">
+
+
+            <button class="btn btn-primary btn-block" id="submitStatus">Change Status</button>
         </div>
     </form>
+
 </div>
 
 </body>
+<script type="text/javascript" src="js/status.js"></script>
 </html>
