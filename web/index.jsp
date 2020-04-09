@@ -12,7 +12,7 @@
 <jsp:include page="header.jsp">
     <jsp:param name="title" value="Home"/>
 </jsp:include>
-<main>
+<main class="index-main">
     <c:if test="${errors.size()>0 }">
         <div class="danger">
             <ul>

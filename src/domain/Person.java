@@ -32,7 +32,7 @@ public class Person {
 		setLastName(lastName);
 		setRole(role);
 		this.friends = new ArrayList<>();
-		this.status = "online";
+		this.status = "offline";
 	}
 
 	public Person(String userId, String password, String salt,

@@ -34,6 +34,7 @@ public class LogIn extends RequestHandler {
 			PersonService personService = super.getPersonService();
 			Person person = personService.getAuthenticatedUser(email, password);
 			person.setStatus("online");
+			super.getPersonService().updatePersons(person);
 			if (person != null) {
 				createSession(person, request, response);
 			} else {
