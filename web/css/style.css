@@ -33,7 +33,9 @@ main, footer {
     max-width: 35px;
 }
 
-
+.index-main{
+    padding-top: 2em;
+}
 .login-dark form {
     max-width:320px;
     width:90%;

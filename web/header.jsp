@@ -4,17 +4,17 @@
 
     <nav class="site-header sticky-top py-1">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a href="Controller" >
+            <a href="Controller?action=Index" >
                 <img class="logo" src="https://icon-library.net//images/chat-icon-png/chat-icon-png-20.jpg" />
                 Chat App
             </a>
 
             <c:choose>
                 <c:when test="${param.title=='Home'}">
-                    <a class="py-2 d-none d-md-inline-block active" href="Controller">Home</a>
+                    <a class="py-2 d-none d-md-inline-block active" href="Controller?action=Index">Home</a>
                 </c:when>
                 <c:otherwise>
-                    <a class="py-2 d-none d-md-inline-block" href="Controller">Home</a>
+                    <a class="py-2 d-none d-md-inline-block" href="Controller?action=Index">Home</a>
                 </c:otherwise>
             </c:choose>
             <c:choose>
