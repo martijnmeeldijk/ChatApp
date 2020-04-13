@@ -4,9 +4,9 @@
 
     <nav class="site-header sticky-top py-1">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a href="Controller?action=Index" >
-                <img class="logo" src="https://icon-library.net//images/chat-icon-png/chat-icon-png-20.jpg" />
-                Chat App
+            <a href="Controller?action=Index"  class="chat-title">
+                <img class="logo" src="images/rocket_logo.png" />
+                Space Chat
             </a>
 
             <c:choose>
