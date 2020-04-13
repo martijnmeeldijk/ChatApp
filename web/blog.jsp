@@ -15,71 +15,51 @@
 <main>
     <div class="blog-container">
         <article>
-            <div class="post-container">
-                <div class="post-content">
-                    <p>Hoe was de projectweek?</p>
+            <c:forEach items="${posts}" var="post">
+                <div class="post-container">
+                    <div class="post-content">
+                        <p>${post.title}</p>
+                    </div>
+                    <div id="post${post.id}-comments">
+                        <c:forEach var="comment" items="${post.getComments()}">
+                            <table class="table table-dark post-comments-table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">${comment.creator}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>${comment.content}</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Rating: </span><span>${comment.rating}/10</span></td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </c:forEach>
+                    </div>
+                    <div class="post-new-comment">
+                        <form onsubmit="return false">
+                            <div class="form-group">
+                                <label for="nameForPost${post.id}">Add Comment</label>
+                                <input class="form-control" id="nameForPost${post.id}" type="text"
+                                       value="" placeholder="Your Name">
+
+                                <input class="form-control" id="commentForPost${post.id}" type="text"
+                                       value="" placeholder="Comment">
+
+                                <input class="form-control" id="ratingForPost${post.id}" type="number"
+                                       min="0" max="10" placeholder="Rating (out of 10)">
+                            </div>
+                        </form>
+                        <button onclick="send(${post.id});" class="btn btn-primary btn-block">Send</button>
+                    </div>
                 </div>
-                <div class="post-comments">
-                    <table class="table table-dark post-comments-table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Elke</th>
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Saai</td>
-
-                        </tr>
-                        <tr>
-                            <td><span>Rating:</span><span>5/5</span></td>
-
-                        </tr>
-
-                        </tbody>
-                    </table>
-                    <table class="table table-dark post-comments-table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Jeff</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Om eerlijk te zijn, moet je een zeer hoog IQ hebben om Rick en Morty te begrijpen.  De humor is extreem subtiel en zonder een goed begrip van de theoretische fysica gaan de meeste grappen over het hoofd van een typische kijker.  Er is ook Rick's nihilistische kijk, die behendig verweven is met zijn karakterisering - zijn persoonlijke filosofie trekt bijvoorbeeld sterk aan bij Narodnaya Volya literatuur.  De fans begrijpen dit soort dingen;  ze hebben de intellectuele capaciteit om de diepten van deze grappen echt te waarderen, om te beseffen dat ze niet alleen grappig zijn - ze zeggen iets diep over HET LEVEN.  Dientengevolge zouden mensen die een hekel hebben aan Rick & Morty GEEN idioten zijn - natuurlijk zouden ze bijvoorbeeld de humor in Rick's existentiële slogan "Wubba Lubba Dub Dub" niet waarderen, wat op zichzelf een cryptische verwijzing is naar de Russische epische Fathers and Sons van Turgenev  .  Ik fantaseer nu, ik stel me voor dat een van die verslaafde simpletons in verwarring hun hoofd krabt terwijl het geniale geluid van Dan Harmon zich op hun televisiescherm ontvouwt.  Wat dwazen ... Ik heb medelijden met ze.  😂
-
-                                En ja, trouwens, ik heb wel een Rick & Morty-tatoeage.  En nee, je kunt het niet zien.  Het is alleen voor de ogen van de dames - en zelfs dan moeten ze aantonen dat ze van tevoren binnen 5 eigen IQ-punten zitten (bij voorkeur lager).  Niets in personeel kind 😎</td>
-
-                        </tr>
-                        <tr>
-                            <td><span>Rating:</span><span>2/5</span></td>
-
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="post-new-comment">
-                    <form action="" method="post">
-
-                        <div class="form-group">
-
-                            <label for="comment">Add Comment</label>
-                            <input class="form-control" id="comment" type="text"
-                                   value="" placeholder="Comment">
-
-
-                            <button class="btn btn-primary btn-block" id="submitComment">Send</button>
-                            <button type="button" onclick="openSocket();" >Open</button>
-                            <button type="button" onclick="send();" >Send</button>
-                            <button type="button" onclick="closeSocket();" >Close</button>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
+            </c:forEach>
         </article>
     </div>
 </main>

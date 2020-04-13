@@ -8,6 +8,7 @@ import java.io.IOException;
 public class Blog extends RequestHandler {
     @Override
     public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("posts", super.getPersonService().getAllBlogPosts());
         request.getRequestDispatcher("blog.jsp").forward(request,response);
     }
 }

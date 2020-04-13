@@ -2,11 +2,14 @@ package domain;
 
 import java.util.List;
 
+import db.BlogPostRepository;
+import db.BlogPostRepositoryStub;
 import db.PersonRepository;
 import db.PersonRepositoryStub;
 
 public class PersonService {
 	private PersonRepository personRepository = new PersonRepositoryStub();
+	private BlogPostRepository blogPostRepository = new BlogPostRepositoryStub();
 
 	public PersonService(){
 	}
@@ -42,4 +45,36 @@ public class PersonService {
 	private PersonRepository getPersonRepository() {
 		return personRepository;
 	}
+
+
+	// BLOG POSTS
+	private BlogPostRepository getBlogPostRepository() {
+		return blogPostRepository;
+	}
+
+	public void addBlogPost(BlogPost post){
+		this.getBlogPostRepository().add(post);
+	}
+	public void addBlogPostComment(BlogPost post, BlogPostComment comment){
+
+		/*BlogPost newPost = this.getBlogPostRepository().get(post.getId());
+		newPost.addComment(comment);
+		updateBlogPost(newPost);*/
+
+		this.getBlogPostRepository().addComment(post,comment);
+	}
+	public BlogPost getBlogPosts(int id){
+		return this.getBlogPostRepository().get(id);
+	}
+	public void deleteBlogPosts(int id){
+		this.getBlogPostRepository().delete(id);
+	}
+	public List<BlogPost> getAllBlogPosts(){
+		return this.getBlogPostRepository().getAll();
+	}
+
+    public void updateBlogPost(BlogPost blogPost) {
+		deleteBlogPosts(blogPost.getId());
+		addBlogPost(blogPost);
+    }
 }

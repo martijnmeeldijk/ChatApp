@@ -132,7 +132,8 @@ article{
 
     color:#fff;
     box-shadow:3px 3px 4px rgba(0,0,0,0.2);
-    padding: 1em;
+    padding: 2em;
+    margin-bottom: 2em;
 }
 .post-comments-table{
     background-color: rgb(35, 45, 56);
