@@ -19,7 +19,7 @@
     <article>
         <div class="login-dark">
 
-            <form action="" method="post">
+            <form onsubmit="return false">
                 <p>Welcome ${user.getFirstName()}! Your status is:</p>
 
                 <p id="status"><sup>loading</sup></p>
@@ -57,11 +57,7 @@
             </tr>
             </thead>
             <tbody id="friends-body">
-            <tr>
 
-                <td>Mark</td>
-                <td>aant kakke</td>
-            </tr>
 
             </tbody>
         </table>
