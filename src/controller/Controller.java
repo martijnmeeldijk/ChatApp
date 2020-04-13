@@ -50,6 +50,11 @@ public class Controller extends HttpServlet {
         		request.getRequestDispatcher("index.jsp").forward(request,response);
         	}
         }
+        else{
+			request.getRequestDispatcher("index.jsp").forward(request,response);
+
+		}
+
 	}
 
 }

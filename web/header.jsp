@@ -25,7 +25,14 @@
                     <a class="py-2 d-none d-md-inline-block" href="Controller?action=Chat">Chat</a>
                 </c:otherwise>
             </c:choose>
-            <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
+            <c:choose>
+                <c:when test="${param.title=='Blog'}">
+                    <a class="py-2 d-none d-md-inline-block active" href="Controller?action=Blog">Blog</a>
+                </c:when>
+                <c:otherwise>
+                    <a class="py-2 d-none d-md-inline-block" href="Controller?action=Blog">Blog</a>
+                </c:otherwise>
+            </c:choose>
 
             <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
 

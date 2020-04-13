@@ -7,7 +7,6 @@ body{
 h1,h2, h3,h4{
     color: white;
 }
-
 main, footer {
     margin: auto;
     width: 80%;
@@ -27,12 +26,10 @@ main, footer {
     color: #fff;
     text-decoration: none;
 }
-
 .logo{
     border: 2px white;
     max-width: 35px;
 }
-
 .index-main{
     padding-top: 2em;
 }
@@ -47,13 +44,11 @@ main, footer {
     box-shadow:3px 3px 4px rgba(0,0,0,0.2);
     margin: auto;
 }
-
 .login-dark .illustration {
     text-align:center;
     font-size:100px;
     color:#2980ef;
 }
-
 .login-dark form .form-control {
     background:none;
     border:none;
@@ -63,7 +58,6 @@ main, footer {
     outline:none;
     color:inherit;
 }
-
 .login-dark form .btn-primary {
     background:#214a80;
     border:none;
@@ -74,12 +68,10 @@ main, footer {
     text-shadow:none;
     outline:none;
 }
-
 .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
     background:#214a80;
     outline:none;
 }
-
 .login-dark form .forgot {
     display:block;
     text-align:center;
@@ -88,12 +80,10 @@ main, footer {
     opacity:0.9;
     text-decoration:none;
 }
-
 .login-dark form .forgot:hover, .login-dark form .forgot:active {
     opacity:1;
     text-decoration:none;
 }
-
 .login-dark form .btn-primary:active {
     transform:translateY(1px);
 }
@@ -103,7 +93,6 @@ main, footer {
 .active{
     color: white !important;
 }
-
 .chat-container{
     display: grid;
     grid-template-columns: 20vw auto 30vw;
@@ -122,7 +111,6 @@ article{
     flex-direction: column;
     justify-content: center;
 }
-
 .friend-list{
     width:100%;
     background-color:#1e2833;
@@ -132,7 +120,58 @@ article{
     box-shadow:3px 3px 4px rgba(0,0,0,0.2);
 
 }
-
 .chat-title{
     font-family: 'Orbitron', sans-serif;
+}
+
+/** BLOG **/
+
+.post-container{
+    background-color:#1e2833;
+    border-radius:4px;
+
+    color:#fff;
+    box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+    padding: 1em;
+}
+.post-comments-table{
+    background-color: rgb(35, 45, 56);
+    border-radius:4px;
+
+    color:#fff;
+    box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+    padding: 1em;
+}
+.post-new-comment{
+    background-color: rgb(35, 45, 56);
+    border-radius:4px;
+
+    color:#fff;
+    box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+    padding: 1em;
+}
+.post-new-comment .form-control{
+    background:none;
+    border:none;
+    border-bottom:1px solid #434a52;
+    border-radius:0;
+    box-shadow:none;
+    outline:none;
+    color:inherit;
+}
+.post-new-comment .btn-primary{
+    background:#214a80;
+    border:none;
+    border-radius:4px;
+    padding:11px;
+    box-shadow:none;
+    margin-top:26px;
+    text-shadow:none;
+    outline:none;
+}
+.blog-container{
+    display: grid;
+    grid-template-columns: 15vw auto 15vw;
+    grid-gap: 1em;
+
 }
