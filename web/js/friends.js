@@ -5,6 +5,21 @@ var getFriendsRequest = new XMLHttpRequest();
 function initFriends(){
     var friendList = document.querySelector(".friend-list");
     getFriends();
+    $('#collapse-icon').on('click', function(){
+        if($('#friends-body').is(':hidden')){
+
+            $('#collapse-icon').removeClass('fa-caret-right');
+            $('#collapse-icon').addClass('fa-caret-down');
+
+            $('#friends-body').show();
+        }
+        else{
+            $('#collapse-icon').removeClass('fa-caret-down');
+            $('#collapse-icon').addClass('fa-caret-right');
+            $('#friends-body').hide();
+
+        }
+    });
 
 }
 

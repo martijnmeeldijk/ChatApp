@@ -8,6 +8,7 @@ function initStatus(){
     var submitStatus = document.querySelector("#submitStatus");
     submitStatus.addEventListener('click', changeStatus);
     getStatus();
+
 }
 
 function changeStatus () {
@@ -41,5 +42,7 @@ function getStatusData () {
         }
     }
 }
+
+
 
 

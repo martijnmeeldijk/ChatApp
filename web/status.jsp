@@ -49,11 +49,10 @@
     </article>
     <aside class="sidebar-right">
         <table class="table table-dark friend-list">
-            <thead>
-            <tr>
+            <thead >
+            <tr class="friend-list-header">
 
-                <th scope="col">Name</th>
-                <th scope="col">Status</th>
+                <th scope="col" colspan="2"><i id="collapse-icon" class="fas fa-caret-down"></i>Friends</th>
             </tr>
             </thead>
             <tbody id="friends-body">
