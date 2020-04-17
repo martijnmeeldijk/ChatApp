@@ -39,7 +39,13 @@
     </div>
 
     <article class="chat-conversation">
+        <p hidden class="user-id"></p>
+        <ul class="messages">
 
+        </ul>
+        <form onsubmit="return false">
+        <input style="display: none" placeholder="Type your message here" class="send-message-box">
+        </form>
     </article>
 
 </div>

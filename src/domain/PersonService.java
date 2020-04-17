@@ -1,15 +1,14 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import db.BlogPostRepository;
-import db.BlogPostRepositoryStub;
-import db.PersonRepository;
-import db.PersonRepositoryStub;
+import db.*;
 
 public class PersonService {
 	private PersonRepository personRepository = new PersonRepositoryStub();
 	private BlogPostRepository blogPostRepository = new BlogPostRepositoryStub();
+	private ConversationRepository conversationRepository = new ConversationRepositoryStub();
 
 	public PersonService(){
 	}
@@ -77,4 +76,19 @@ public class PersonService {
 		deleteBlogPosts(blogPost.getId());
 		addBlogPost(blogPost);
     }
+
+    // Conversations
+	public List<Message> getMessagesByIds(List<String> personIds){
+		ArrayList<Person> participants=new ArrayList<>();
+		for(String s : personIds){
+			participants.add(this.personRepository.get(s));
+		}
+		return getMessages(participants);
+	}
+	public List<Message> getMessages(List<Person> personList){
+		return this.conversationRepository.getConversation(personList).getMessages();
+	}
+	public void addMessage(List<Person> personList, Person sender,  String message){
+		this.conversationRepository.getConversation(personList).addMessage(sender, message);
+	}
 }

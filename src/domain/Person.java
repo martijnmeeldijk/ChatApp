@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Person {
+public class Person implements Comparable{
 
 	private String userId;
 	private String password;
@@ -174,5 +174,10 @@ public class Person {
 	}
 	public void addFriend(Person person){
 		this.friends.add(person);
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		return this.getUserId().compareTo(((Person)o).getUserId());
 	}
 }

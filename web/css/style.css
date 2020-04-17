@@ -206,6 +206,9 @@ article{
 .chat-friend-box:hover {
     background-color: #6f7a85;
 }
+.chat-friend-box:active {
+    background-color: #3c424b;
+}
 .chats{
     border-bottom: 1px solid #0e131c;
     padding-left: 1em;
@@ -226,4 +229,56 @@ article{
 }
 .chatting-container article{
     border-top: 1px solid #0e131c;
+}
+.send-message-box{
+    background:none;
+    border:none;
+    border-bottom:1px solid #434a52;
+    border-radius:0;
+    box-shadow:none;
+    outline:none;
+    color:inherit;
+    width: 90%;
+    margin: auto auto 1em;
+    padding: 1em;
+
+}
+.message-you{
+    padding: 0.5em;
+    background-color: #6f7a85;
+    border-radius: 4px;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    float: left;
+}
+.message-other{
+    padding: 0.5em;
+    background-color: #434c57;
+    border-radius: 4px;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-self: flex-end;
+
+}
+.messages{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    overflow: auto;
+    max-height: 60vh;
+    text-align: right;
+    margin: 2em;
+}
+.sender{
+    font-size: 0.5rem;
+    color: #3c424b;
+    padding: 0;
+}
+.message-other .sender{
+    color: #232831;
+
 }
