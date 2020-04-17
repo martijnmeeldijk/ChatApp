@@ -22,16 +22,9 @@
             <div class="chats">Chats</div>
             <div class="chat-friend-box">
                 <i class="icon fas fa-user"></i>
-                <span class="username" >Henkie</span>
+                <span class="username" >Nothing to see here</span>
             </div>
-            <div class="chat-friend-box">
-                <i class="icon fas fa-user"></i>
-                <span class="username" >Henkie</span>
-            </div>
-            <div class="chat-friend-box">
-                <i class="icon fas fa-user"></i>
-                <span class="username" >Henkie</span>
-            </div>
+
 
 
         </div>
@@ -39,7 +32,9 @@
     </div>
 
     <article class="chat-conversation">
+        <span style="display: none" class="user-firstName"></span>
         <p hidden class="user-id"></p>
+
         <ul class="messages">
 
         </ul>

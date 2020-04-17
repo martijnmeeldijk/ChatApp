@@ -21,7 +21,9 @@ public class ConversationRepositoryStub implements ConversationRepository {
             if(equalLists(c.getParticipants(), participants)) return c;
         }
         Conversation newConversation = new Conversation(participants);
-        newConversation.addMessage(new Person(), "Start of conversation");
+        Person system = new Person();
+        system.setFirstName("System");
+        newConversation.addMessage( system, "Start of conversation");
         conversations.add(newConversation);
 
         return newConversation;

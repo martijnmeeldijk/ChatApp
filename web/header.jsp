@@ -37,6 +37,7 @@
                 </c:otherwise>
             </c:choose>
 
+            <c:if test="${not empty user}">
             <c:choose>
                 <c:when test="${param.title=='Chats'}">
                     <a class="py-2 d-none d-md-inline-block active" href="Controller?action=Chats">Chats</a>
@@ -45,6 +46,18 @@
                     <a class="py-2 d-none d-md-inline-block" href="Controller?action=Chats">Chats</a>
                 </c:otherwise>
             </c:choose>
+            </c:if>
+
+            <c:if test="${not empty user}">
+                <c:choose>
+                    <c:when test="${param.title=='Find Friends'}">
+                        <a class="py-2 d-none d-md-inline-block active" href="Controller?action=FindFriends">Find Friends</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="py-2 d-none d-md-inline-block" href="Controller?action=FindFriends">Find Friends</a>
+                    </c:otherwise>
+                </c:choose>
+            </c:if>
 
 
 

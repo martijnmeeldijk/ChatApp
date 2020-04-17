@@ -14,7 +14,6 @@ public class Conversation {
         this.participants = participants;
 
         messages = new ArrayList<>();
-        messages.add(new Message(new Person(), "Start of conversation"));
     }
     public void addMessage(Person sender, String message){
         messages.add(new Message(sender, message));

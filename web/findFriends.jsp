@@ -17,19 +17,22 @@
 <body>
 
 <div class="chatting-container">
-    <div class="sidebar-left">
 
-    </div>
+    <article>
+        <form onsubmit="return false" class="find-friends-form">
+            <input placeholder="Search for friends" class="send-message-box" id="friend-searchbar">
+            <button class="btn btn-dark" id="friend-search-button" onclick="addNewFriend()">Add Friend</button>
 
-    <article class="chat-conversation">
-
+        </form>
+        <p id="not-found" style="display: none">This person doesn't exist</p>
+        <p id="found" style="display: none">Friend added</p>
     </article>
 
 </div>
 
 
 </body>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/findFriends.js"></script>
 
 </html>

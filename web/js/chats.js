@@ -62,7 +62,7 @@ function friends() {
                         $("<div class=\"chat-friend-box\">\n" +
                         "                <i class=\"icon fas fa-user\"></i>\n" +
                         "                <span class=\"username\" >" + person.firstName + "</span>\n" +
-                        "            </div>").on( 'click',{userId:person.userId}, selectFriendToChat)
+                        "            </div>").on( 'click',{userId:person.userId, name:person.firstName}, selectFriendToChat)
                     );
                 });
             }
@@ -79,6 +79,8 @@ function selectFriendToChat(evt){
         success: json => {
             $('.send-message-box').show();
             $('.user-id').text(evt.data.userId);
+            $('.user-firstName').text(evt.data.name).show();
+
             console.log(json);
             $('.messages').empty();
             $(json).each((index, message) =>{

@@ -88,7 +88,7 @@ main, footer {
     transform:translateY(1px);
 }
 .login-dark{
-
+    padding-top: 2em;
 }
 .active{
     color: white !important;
@@ -105,7 +105,6 @@ aside {
 
 }
 article{
-    padding-top: 2em;
     grid-column: 2;
     display: flex;
     flex-direction: column;
@@ -175,6 +174,7 @@ article{
     display: grid;
     grid-template-columns: 15vw auto 15vw;
     grid-gap: 1em;
+    padding-top: 2em;
 
 }
 
@@ -281,4 +281,93 @@ article{
 .message-other .sender{
     color: #232831;
 
+}
+.user-firstName{
+    background-color: #2c3844;
+    border-bottom:1px solid #434a52;
+    padding: 1em;
+}
+
+/** Find Friends**/
+
+.find-friends-form{
+    margin: 3em;
+    width: available;
+    display: flex;
+    flex-direction: row;
+}
+#friend-search-button{
+    padding: 1em;
+    margin: 1em;
+    width: 10em;
+}
+.ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #1e2833;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+}
+.ui-menu-item-wrapper{
+    padding: 1em;
+}
+
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.ui-state-hover, .ui-state-active {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #19222d;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    background-image: none;
+}
+.ui-helper-hidden-accessible {
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+
+    height: 1px;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    padding: 0;
+
+    position: absolute;
+
+    width: 1px;
 }
