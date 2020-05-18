@@ -59,7 +59,14 @@
                 </c:choose>
             </c:if>
 
-
+            <c:choose>
+                <c:when test="${param.title=='Register'}">
+                    <a class="py-2 d-none d-md-inline-block active" href="Controller?action=ShowRegister">Register</a>
+                </c:when>
+                <c:otherwise>
+                    <a class="py-2 d-none d-md-inline-block" href="Controller?action=ShowRegister">Register</a>
+                </c:otherwise>
+            </c:choose>
 
 
         </div>
